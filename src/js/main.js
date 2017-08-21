@@ -1,6 +1,10 @@
 $( document ).ready(function(){
-	var latitude, longitude;
+	geoFindMe();
+});
+
+// Get latitude and longitude
 	function geoFindMe() {
+		var latitude, longitude;
 		if (!navigator.geolocation){
 			alert("Geolocation is not supported by your browser");
 			return;
@@ -9,25 +13,26 @@ $( document ).ready(function(){
 			latitude  = position.coords.latitude;
 			longitude = position.coords.longitude;
 			console.log(longitude + "  " + latitude);
-			getWeatgerData(latitude, longitude);
+			getWeatherData(latitude, longitude);
 		}
 		function error() {
 			alert("Unable to retrieve your location");
 		}
 		navigator.geolocation.getCurrentPosition(success, error);
 	}
-	geoFindMe();
-	function getWeatgerData (latitude, longitude) {
+
+// Get data from FreeCodeCamp API
+	function getWeatherData (latitude, longitude) {
 		var urlString = "https://fcc-weather-api.glitch.me/api/current?" + "lat=" + latitude + "&" + "lon=" + longitude;
 		console.log(urlString);
 		$.ajax({
-			// "url" : "https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139",
 			"url" : urlString,
 			"type" : "GET",
 			"success" : function(responce) {
 				console.log(responce);
-				// console.log(responce.weather[0]);
-				// $("body").append("<img src = " + responce.weather[0].icon + "\"" + "</img>");
+				console.log(responce.weather[0]);
+				console.log(responce.weather[0].main);
+				$("body").append("<img src = " + responce.weather[0].icon + "\"" + "</img>");
 			},
 			"error" : function(error) {
 				console.log(error);
@@ -35,6 +40,4 @@ $( document ).ready(function(){
 			crossDomain: true
 		});
 			console.log("lat" + latitude + "&" + "lon" +longitude);
-
 	}
-});
