@@ -4,16 +4,26 @@ html
 		title Empty Project
 		link(rel="stylesheet" type="text/css" href="css/main.css")
 	body
-		.city-name
-			h1#city-name
-			span#country
-		.icon
-			img#icon-img(src="")
-		.weather
-			p#temp
-			p#desc
-		form#formSubmit(name = "log-in-form")
-			input#input-city(type = "text" name = "input-city" placeholder = "City" required)
-			button#searchCity Search
+		.main-wrapper
+			.city-name
+				h1#city-name
+				span#country
+			.main-weather
+				.icon
+					img#icon-img(src="")
+				.weather
+					p#desc
+					p Температура&nbsp;
+						span#temp
+					p Влажность&nbsp;
+						span#humidity
+					p Давление&nbsp;
+						span#pressure
+					p Скорость ветра&nbsp;
+						span#wind
+			.search-form
+				form#formSubmit(name = "log-in-form")
+					input#input-city(type = "text" name = "input-city" placeholder = "Город" required)
+					button#searchCity Найти
 		script(src="js/jquery.min.js")
 		script(src="js/main.js")

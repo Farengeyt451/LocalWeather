@@ -1,0 +1,79 @@
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+
+.main-wrapper {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.city-name {
+	display: flex;
+	h1, span {
+		padding: 2px;
+		font-weight: normal;
+		letter-spacing: 2px;
+		margin: 0;
+	}
+}
+
+.main-weather {
+	min-width: 600px;
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	.icon {
+		margin: 40px;
+		min-height: 300px;
+		min-width: 300px;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.weather {
+		min-height: 300px;
+		min-width: 300px;
+		padding: 25px 0;
+		p:first-child {
+			text-transform: capitalize;
+		}
+		p {
+			font-size: 18px;
+			span {
+				cursor: pointer;
+				// font-size: 20px;
+			}
+		}
+		margin: 40px;
+	}
+}
+
+.search-form {
+	input {
+		padding: 5px 10px;
+		border-radius: 2px;
+		border: 1px solid #555;
+		width: 300px;
+		// height: 25px;
+		outline: none;
+	}
+	button {
+		padding: 5px 10px;
+		border-radius: 2px;
+		background-color: #FFF;
+		outline: none;
+		border: 1px solid #555;
+		width: 100px;
+		// height: 25px;
+	}
+}
+
+
