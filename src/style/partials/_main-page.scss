@@ -1,20 +1,19 @@
-* {
-	font-family: "Montserrat", sans-serif;
-	box-sizing: border-box;
-}
 
 body {
 	background-image: url("../img/background.svg");
 	background-position: center center;
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
 }
 
 .main-wrapper {
 	background-color: rgba(204, 253, 150, 0.3);
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .city-name {
@@ -32,13 +31,13 @@ body {
 }
 
 .main-weather {
-	min-width: 600px;
 	width: 100%;
 	flex-wrap: wrap;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+
 	.icon {
 		position: relative;
 		background-color: rgba(255, 255, 255, 0.3);
@@ -46,6 +45,7 @@ body {
 		min-height: 300px;
 		min-width: 300px;
 		border-radius: 50%;
+
 		.border {
 			position: absolute;
 			top: 0;
@@ -83,20 +83,29 @@ body {
 }
 
 .search-form {
-	input {
-		padding: 5px 10px;
-		border-radius: 2px;
-		border: 1px solid #555;
-		width: 300px;
+	.input-group {
+		background-color: transparent;
+		background-color: #73993D;
+		color: #FFF;
+		padding: 8px 20px;
+		// border-radius: 2px;
+		// border: 2px solid #90D232;
+		border: none;
 		outline: none;
+		text-transform: uppercase;
+	}
+	input {
+		width: 300px;
+
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.4);
+		}
 	}
 	button {
-		padding: 5px 10px;
-		border-radius: 2px;
-		background-color: #FFF;
-		outline: none;
-		border: 1px solid #555;
+		color: #8F8F8F;
 		width: 100px;
+		cursor: pointer;
+
 	}
 }
 

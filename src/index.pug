@@ -1,8 +1,16 @@
 doctype html
 html
 	head
-		title Empty Project
-		link(rel="stylesheet" type="text/css" href="css/main.css")
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="author" content="Alexander Kislov")
+		meta(name="copyright" content="Alexander Kislov")
+		meta(name="description" content="")
+		meta(name="keywords" content="")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title Weather
+		link(rel="shortcut icon" href="img/portfolio.ico" type="image/x-icon")
+		link(rel="stylesheet" href="css/main.css")
 	body
 		.main-wrapper
 			.city-name
@@ -24,7 +32,7 @@ html
 						span#wind
 			.search-form
 				form#formSubmit(name = "log-in-form")
-					input#input-city(type = "text" name = "input-city" placeholder = "Город" required)
-					button#searchCity Найти
+					input.input-group#input-city(type = "text" name = "input-city" placeholder = "Город" required)
+					button.input-group#searchCity Найти
 		script(src="js/jquery.min.js")
 		script(src="js/main.js")
