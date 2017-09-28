@@ -1,3 +1,5 @@
+var infoTemp;
+var tempUnit = "C";
 $(document).ready(function(){
 	geoFindMe();
 });
@@ -48,16 +50,16 @@ function getWeatherData(city) {
 // Get weather AJAX
 function getData(urlString) {
 		$.ajax({
-			"url" : urlString,
-			"type" : "GET",
-			"success" : function(responce) {
+			"url": urlString,
+			"type": "GET",
+			"success": function(responce) {
 				console.log(responce);
 				console.log(responce.name);
 				console.log("Rise " + transformDate(responce.sys.sunrise));
 				console.log("Set " + transformDate(responce.sys.sunset));
 				appendData(responce);
 			},
-			"error" : function(error) {
+			"error": function(error) {
 				console.log(error);
 			},
 			crossDomain: true
@@ -76,7 +78,7 @@ function appendData(responce) {
 	var nameCity = responce.name;
 	var nameCountry = responce.sys.country;
 	var weatherDesc = responce.weather[0].description;
-	var infoTemp = responce.main.temp;
+	infoTemp = responce.main.temp;
 	var infoHumidity = responce.main.humidity;
 	var infoPresure = responce.main.pressure;
 	var infoWind = responce.wind.speed;
@@ -89,7 +91,7 @@ function appendData(responce) {
 	$("#pressure").text(Math.floor(infoPresure * 0.750062) + " " + "mm of mercury");
 	$("#wind").text(infoWind + " " + "m/s");
 	$("#linkToMap").attr("href", "http://openweathermap.org/find?q=" + nameCity + "," + nameCountry);
-	console.log(responce.weather[0].icon);
+	console.log(typeIcon);
 	switch(typeIcon) {
 		case "01d":
 			$("#icon-img").attr("src", "img/animated-icons/day.svg");
@@ -144,3 +146,19 @@ function appendData(responce) {
 	}
 }
 
+// Convert Celsius to Fahrenheit and vice versa
+$("#temp").on("click", function () {
+	console.log(infoTemp);
+
+	if(tempUnit === "C") {
+		console.log(infoTemp);
+		var infoTempF = Math.floor(infoTemp * 9 / 5 + 32);
+		$("#temp").text(infoTempF + String.fromCharCode(176) + "F");
+		tempUnit = "F";
+		console.log(tempUnit);
+	} else {
+		$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + "C");
+		tempUnit = "C";
+	}
+
+});
