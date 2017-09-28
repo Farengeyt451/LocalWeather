@@ -1,12 +1,13 @@
 doctype html
 html
 	head
-		title Empty Project
+		title Local Weather
 		link(rel="stylesheet" type="text/css" href="css/main.css")
 	body
 		.main-wrapper
 			.city-name
-				h1#city-name
+				a#linkToMap(href="")
+					h1#city-name
 				span#country
 			.main-weather
 				.icon
@@ -14,17 +15,18 @@ html
 					img#icon-img(src="")
 				.weather
 					p#desc
-					p Температура&nbsp;
+					p Temperature&nbsp;
 						span#temp
-					p Влажность&nbsp;
+					p Humidity&nbsp;
 						span#humidity
-					p Давление&nbsp;
+					p Pressure&nbsp;
 						span#pressure
-					p Скорость ветра&nbsp;
+					p Wind speed&nbsp;
 						span#wind
 			.search-form
 				form#formSubmit(name = "log-in-form")
-					input#input-city(type = "text" name = "input-city" placeholder = "Город" required)
-					button#searchCity Найти
+					input#input-city(type = "text" name = "input-city" placeholder = "London, UK" required)
+					button#searchCity Search
+						span.tooltip Enter data
 		script(src="js/jquery.min.js")
 		script(src="js/main.js")
