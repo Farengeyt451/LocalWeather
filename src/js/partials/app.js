@@ -147,7 +147,7 @@ function appendData(responce) {
 }
 
 // Convert Celsius to Fahrenheit and vice versa
-$("#temp").on("click", function () {
+$("#convertTemp").on("click", function () {
 	console.log(infoTemp);
 
 	if(tempUnit === "C") {
