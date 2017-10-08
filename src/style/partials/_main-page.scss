@@ -7,13 +7,27 @@ body {
 }
 
 .main-wrapper {
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba($white, 0.3);
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	min-height: 100vh;
+}
+
+.border {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	border-radius: 50%;
+	border: 4px dashed $accent-border;
+	animation: spin 100s linear infinite;
 }
 
 .city-name {
@@ -23,7 +37,7 @@ body {
 		font-weight: normal;
 		letter-spacing: 2px;
 		margin: 0;
-		color: #ffaa00;
+		color: $accent-caption;
 	}
 	h1 {
 		font-size: 50px;
@@ -41,70 +55,103 @@ body {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	.icon {
+	.icon-weather {
 		position: relative;
-		background-color: rgba(255, 255, 255, 0.7);
-		margin: 40px 120px 40px 40px;
+		background-color: rgba($white, 0.7);
+		margin: 40px;
 		height: 300px;
 		width: 300px;
 		border-radius: 50%;
-
-		.border {
+		span {
+			text-transform: capitalize;
+			color: #4F8F7D;
+			font-size: 20px;
 			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background: transparent;
-			padding: 0;
-			margin: 0;
-			border-radius: 50%;
-			border: 4px dashed #4F8F7D;
-			animation: spin 100s linear infinite;
-			}
+			left: 50%;
+			transform: translateX(-50%);
+			top: 25px;
+			text-align: center;
+		}
 		img {
+			margin-top: 5px;
 			height: 100%;
 			width: 100%;
 		}
 	}
-
 	.icon-temp {
 		position: absolute;
-		height: 150px;
-		width: 150px;
+		height: 130px;
+		width: 130px;
+		padding: 20px;
 		bottom: -10px;
-		left: calc(50% - 160px);
+		left: calc(50% - 300px);
 		border-radius: 50%;
-		background-color: rgba(255, 255, 255, 0.7);
+		background-color: rgba($white, 0.7);
 		&:hover, &:focus {
 			cursor: pointer;
 		}
 		.main-temp {
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			width: 100%;
 			height: 100%;
+			span:first-child {
+				margin-bottom: 10px;
+				font-size: 20px;
+			}
 			span {
 				color: #4F8F7D;
 				font-size: 25px;
 			}
 		}
 		.border {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background: transparent;
-			padding: 0;
-			margin: 0;
-			border-radius: 50%;
-			border: 4px dotted #4F8F7D;
-			animation: spin 100s linear infinite;
+			border: 2px solid $accent-border;
+			animation: none;
+			// animation: spin 100s linear infinite reverse;
 		}
 	}
 
+	.icon-humidity {
+		@extend .icon-temp;
+		bottom: 160px;
+		left: 70% ;
+		.main-humidity {
+			@extend .main-temp;
+		}
+		&:hover, &:focus {
+			cursor: default;
+		}
+	}
+
+	.icon-pressure {
+		@extend .icon-temp;
+		bottom: 260px;
+		left: 60% ;
+		.main-pressure {
+			@extend .main-temp;
+			span:nth-child(3) {
+				font-size: 20px;
+				text-align: center;
+				margin-top: 10px;
+			}
+		}
+	}
+
+	.icon-wind {
+		@extend .icon-temp;
+		bottom: 360px;
+		left: 20% ;
+		.main-wind {
+			@extend .main-temp;
+			span:nth-child(3) {
+				font-size: 20px;
+				text-align: center;
+				margin-top: 10px;
+			}
+		}
+	}
 	.weather {
 		min-width: 300px;
 		padding: 25px 0;
@@ -112,9 +159,8 @@ body {
 			text-transform: capitalize;
 		}
 		p {
-			color: #4F8F7D;
+			color: $accent-text;
 			font-size: 18px;
-
 			span {
 				cursor: pointer;
 				font-size: 20px;
@@ -149,7 +195,7 @@ body {
 			font-size: 14px;
 		}
 		&:focus, &:hover {
-			border: 2px solid rgba(68, 136, 119, 1.0);
+			border: 2px solid $accent-border;
 		}
 	}
 	button[type = "submit"] {
@@ -168,7 +214,7 @@ body {
 		&:hover, &:focus {
 			letter-spacing: 2px;
 			cursor: pointer;
-			border: 2px solid rgba(68, 136, 119, 1.0);
+			border: 2px solid $accent-border;
 		}
 	}
 }

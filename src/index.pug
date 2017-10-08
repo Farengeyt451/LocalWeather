@@ -18,23 +18,42 @@ html
 					h1#city-name
 				span#country
 			.main-weather
-				.icon
+				.icon-weather
+					span#desc
 					.border
 					img#icon-img(src="")
 				.icon-temp#convertTemp
 					.main-temp
+						span Temperature
 						span#temp
 					.border
-				.weather
-					p#desc
-					p Temperature&nbsp;
-						span#temp
-					p Humidity&nbsp;
+				.icon-humidity
+					.main-humidity
+						span Humidity
 						span#humidity
-					p Pressure&nbsp;
+					.border
+				.icon-pressure#convertPressure
+					.main-pressure
+						span Pressure
 						span#pressure
-					p Wind speed&nbsp;
+						span mm of mercury
+					.border
+				.icon-wind#convertWind
+					.main-wind
+						span Wind Speed
 						span#wind
+						span m/s
+					.border
+				//- .weather
+				//- 	p#desc
+				//- 	p Temperature&nbsp;
+				//- 		span#temp
+				//- 	p Humidity&nbsp;
+				//- 		span#humidity
+				//- 	p Pressure&nbsp;
+				//- 		span#pressure
+				//- 	p Wind speed&nbsp;
+				//- 		span#wind
 			.search-form
 				form#formSubmit(name = "log-in-form")
 					input#input-city(type = "text" name = "input-city" placeholder = "London, UK" required)

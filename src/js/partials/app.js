@@ -88,8 +88,8 @@ function appendData(responce) {
 	$("#desc").text(weatherDesc);
 	$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + "C");
 	$("#humidity").text(infoHumidity + String.fromCharCode(37));
-	$("#pressure").text(Math.floor(infoPresure * 0.750062) + " " + "mm of mercury");
-	$("#wind").text(infoWind + " " + "m/s");
+	$("#pressure").text(Math.floor(infoPresure * 0.750062));
+	$("#wind").text(infoWind);
 	$("#linkToMap").attr("href", "http://openweathermap.org/find?q=" + nameCity + "," + nameCountry);
 	console.log(typeIcon);
 	switch(typeIcon) {

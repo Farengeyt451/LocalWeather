@@ -195,15 +195,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="648.45804"
-     inkscape:cy="254.16801"
-     inkscape:document-units="mm"
+     inkscape:zoom="0.5"
+     inkscape:cx="774.26646"
+     inkscape:cy="527.70023"
+     inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1366"
-     inkscape:window-height="703"
+     inkscape:window-width="1920"
+     inkscape:window-height="911"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -215,7 +215,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -224,6 +224,15 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-11.249983)">
+    <rect
+       style="fill:#fef9ed;fill-opacity:1;stroke:none;stroke-width:1.08197057;stroke-opacity:1"
+       id="rect6144"
+       width="508"
+       height="285.75"
+       x="0"
+       y="11.249984"
+       inkscape:transform-center-x="-143.41831"
+       inkscape:transform-center-y="4.1522557" />
     <path
        inkscape:connector-curvature="0"
        id="path16"
@@ -252,7 +261,7 @@
     <path
        inkscape:connector-curvature="0"
        id="path102"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.36604068"
+       style="fill:#fef9ed;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.36604068"
        d="M 59.866639,250.52238 H 502.70146 V 119.58321 H 59.866639 Z" />
     <path
        inkscape:connector-curvature="0"
@@ -411,26 +420,6 @@
           <image
              id="image250"
              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAABHNCSVQICAgIfAhkiAAAACBJREFUCJlj/Pfv339GRkYGbIAJlwQDAwMDE06ZwSgJAJ0OBA8H3HycAAAAAElFTkSuQmCC"
-             transform="matrix(1,0,0,-1,0,1)"
-             preserveAspectRatio="none"
-             style="image-rendering:optimizeSpeed"
-             height="1"
-             width="1" />
-        </g>
-      </g>
-    </g>
-    <g
-       id="g264"
-       transform="matrix(0.3630716,0,0,-0.36903404,24.652999,610.85682)">
-      <g
-         clip-path="url(#clipPath270)"
-         id="g266">
-        <g
-           transform="matrix(126.2,0,0,121.2,459.9,1160.9)"
-           id="g272">
-          <image
-             id="image274"
-             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAZCAYAAAAv3j5gAAAABHNCSVQICAgIfAhkiAAAAedJREFUSIm91Mtu00AUxvH/zBnfZjy+xfGlErChi4aWF6l4/8dAiCxKiWwWTixaUtKUmG9jeWzrp3PmjNX9/ZdxVdc8z/X1R+I44qpr8d6zqipS73HOUpQVURQTRhFaC0b0H9//njL3GIDtdvvkQVVVAKzrFcM4IiJoUYRRSJblAJggmK4nEICv375P0I+Hh3nxZnNDlmV07ZrdbkfXtWilSX1GnhdoEaxLUUBgzEnkELPb7eabu893cyVRGLJeTy3t+g6lFABJYlFKEYbhvPYqaBgHAG5v74iThKu+RYtQVRVpmrJuGrIsJzAB4/7d6EwEmFqnUAzDwFXfYpOEtm0wxpAXxR4xWOcwQYCInAXM0GbzCe89jz8fGceRD+/fEYUhaZYRRzEA1qVoEUQE0ac3/yjkvafvG1ZlSV5ME1WuVhRFgZEA6xwiMlXzRgTA9H2Ds5a8yMlST1bke2RqlxY5e+OPQs5a2rah7zrEGOr94XU+Q79hul6E2rYhdW5GgiAkSSzjMBAmyT8DM+SspSjLJ4js2wVcpBoAU1bVUeRSwCG6rmuMBIsiAOYwwmEUI1otggDowzlZEgHQS7brkDL3qGEYxqURAP0/EIC3/7zOQBaDniOLQMeQi0MvIReF/oZcDDqFAPwCHPw9+lFdfjsAAAAASUVORK5CYII="
              transform="matrix(1,0,0,-1,0,1)"
              preserveAspectRatio="none"
              style="image-rendering:optimizeSpeed"
