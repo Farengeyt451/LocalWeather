@@ -16,19 +16,7 @@ body {
 	min-height: 100vh;
 }
 
-.border {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: transparent;
-	padding: 0;
-	margin: 0;
-	border-radius: 50%;
-	border: 4px dashed $accent-border;
-	animation: spin 100s linear infinite;
-}
+
 
 .city-name {
 	display: flex;
@@ -55,119 +43,133 @@ body {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	.icon-weather {
-		position: relative;
-		background-color: rgba($white, 0.7);
-		margin: 40px;
-		height: 300px;
-		width: 300px;
-		border-radius: 50%;
-		span {
-			text-transform: capitalize;
-			color: #4F8F7D;
-			font-size: 20px;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			top: 25px;
-			text-align: center;
-		}
-		img {
-			margin-top: 5px;
-			height: 100%;
-			width: 100%;
-		}
-	}
-	.icon-temp {
+}
+
+.icon-weather {
+	position: relative;
+	background-color: rgba($white, 0.7);
+	margin: 40px;
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+	span {
+		text-transform: capitalize;
+		color: #4F8F7D;
+		font-size: 20px;
 		position: absolute;
-		height: 130px;
-		width: 130px;
-		padding: 20px;
-		bottom: -10px;
-		left: calc(50% - 300px);
+		left: 50%;
+		transform: translateX(-50%);
+		top: 25px;
+		text-align: center;
+	}
+	img {
+		margin-top: 5px;
+		height: 100%;
+		width: 100%;
+	}
+	.border {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: transparent;
+		padding: 0;
+		margin: 0;
 		border-radius: 50%;
-		background-color: rgba($white, 0.7);
-		&:hover, &:focus {
-			cursor: pointer;
-		}
-		.main-temp {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-			span:first-child {
-				margin-bottom: 10px;
-				font-size: 20px;
-			}
-			span {
-				color: #4F8F7D;
-				font-size: 25px;
-			}
-		}
-		.border {
-			border: 2px solid $accent-border;
-			animation: none;
-			// animation: spin 100s linear infinite reverse;
-		}
+		border: 4px dotted $accent-border;
+		animation: spin 100s linear infinite;
 	}
+}
 
-	.icon-humidity {
-		@extend .icon-temp;
-		bottom: 160px;
-		left: 70% ;
-		.main-humidity {
-			@extend .main-temp;
-		}
-		&:hover, &:focus {
-			cursor: default;
-		}
+.icon-temp {
+	// position: absolute;
+	border: 2px solid $accent-border;
+	height: 130px;
+	width: 130px;
+	padding: 20px;
+	margin: 20px;
+	// bottom: -10px;
+	// left: calc(50% - 300px);
+	border-radius: 50%;
+	background-color: rgba($white, 0.7);
+	&:hover, &:focus {
+		cursor: pointer;
 	}
+}
 
-	.icon-pressure {
-		@extend .icon-temp;
-		bottom: 260px;
-		left: 60% ;
-		.main-pressure {
-			@extend .main-temp;
-			span:nth-child(3) {
-				font-size: 20px;
-				text-align: center;
-				margin-top: 10px;
-			}
-		}
+.main-temp {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	span:first-child {
+		margin-bottom: 10px;
+		font-size: 18px;
 	}
+	span {
+		color: #4F8F7D;
+		font-size: 25px;
+	}
+}
 
-	.icon-wind {
-		@extend .icon-temp;
-		bottom: 360px;
-		left: 20% ;
-		.main-wind {
-			@extend .main-temp;
-			span:nth-child(3) {
-				font-size: 20px;
-				text-align: center;
-				margin-top: 10px;
-			}
-		}
+.icon-humidity {
+	@extend .icon-temp;
+	bottom: 160px;
+	left: 70% ;
+	.main-humidity {
+		@extend .main-temp;
 	}
-	.weather {
-		min-width: 300px;
-		padding: 25px 0;
-		p:first-child {
-			text-transform: capitalize;
-		}
-		p {
-			color: $accent-text;
+	&:hover, &:focus {
+		cursor: default;
+	}
+}
+
+.icon-pressure {
+	@extend .icon-temp;
+	bottom: 260px;
+	left: 60% ;
+	.main-pressure {
+		@extend .main-temp;
+		span:nth-child(3) {
 			font-size: 18px;
-			span {
-				cursor: pointer;
-				font-size: 20px;
-			}
+			text-align: center;
+			margin-top: 10px;
 		}
-		margin: 40px;
 	}
+}
+
+.icon-wind {
+	@extend .icon-temp;
+	bottom: 360px;
+	left: 20% ;
+	.main-wind {
+		@extend .main-temp;
+		span:nth-child(3) {
+			font-size: 18px;
+			text-align: center;
+			margin-top: 10px;
+		}
+	}
+}
+
+.weather {
+	min-width: 300px;
+	padding: 25px 0;
+	p:first-child {
+		text-transform: capitalize;
+	}
+	p {
+		color: $accent-text;
+		font-size: 18px;
+		span {
+			cursor: pointer;
+			font-size: 20px;
+		}
+	}
+	margin: 40px;
 }
 
 .search-form {
