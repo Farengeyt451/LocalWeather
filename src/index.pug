@@ -34,15 +34,15 @@ html
 					.main-pressure
 						span Pressure
 						span#pressure
-						span mm of mercury
+						span#pressureUnits
 				.icon-wind#convertWind
 					.main-wind
 						span Wind Speed
 						span#wind
-						span m/s
+						span#windUnits
 			.search-form
-				form#formSubmit(name = "log-in-form")
+				form#formSubmit(name="log-in-form")
 					input#input-city(type = "text" name = "input-city" placeholder = "London, UK" required)
-					button(type = "submit")#searchCity Search
+					button(type ="submit")#searchCity Search
 		script(src="js/jquery.min.js")
 		script(src="js/main.js")

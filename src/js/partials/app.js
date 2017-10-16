@@ -1,28 +1,33 @@
-var infoTemp;
-var tempUnit = "C";
+var infoTemp,
+		tempUnit = "C",
+		infoPresure,
+		pressureUnit = "mm of mercury",
+		inforWind,
+		windUnit = "m/s";
+
 $(document).ready(function(){
 	geoFindMe();
 });
 
 // Get latitude and longitude
-	function geoFindMe() {
-		var latitude, longitude;
-		if (!navigator.geolocation){
-			alert("Geolocation is not supported by your browser");
-			return;
-		}
-		function success(position) {
-			latitude = position.coords.latitude;
-			longitude = position.coords.longitude;
-			console.log(longitude + "  " + latitude);
-			getWeatherDataAuto(latitude, longitude);
-		}
-		function error() {
-			// alert("Unable to retrieve your location");
-			getWeatherDataAuto(51.509865, -0.118092);
-		}
-		navigator.geolocation.getCurrentPosition(success, error);
+function geoFindMe() {
+	var latitude, longitude;
+	if (!navigator.geolocation){
+		alert("Geolocation is not supported by your browser");
+		return;
 	}
+	function success(position) {
+		latitude = position.coords.latitude;
+		longitude = position.coords.longitude;
+		console.log(longitude + "  " + latitude);
+		getWeatherDataAuto(latitude, longitude);
+	}
+	function error() {
+		// alert("Unable to retrieve your location");
+		getWeatherDataAuto(51.509865, -0.118092);
+	}
+	navigator.geolocation.getCurrentPosition(success, error);
+}
 
 // Search location manually
 $("#searchCity").on("click", function () {
@@ -80,8 +85,8 @@ function appendData(responce) {
 	var weatherDesc = responce.weather[0].description;
 	infoTemp = responce.main.temp;
 	var infoHumidity = responce.main.humidity;
-	var infoPresure = responce.main.pressure;
-	var infoWind = responce.wind.speed;
+	infoPresure = responce.main.pressure;
+	infoWind = responce.wind.speed;
 	var typeIcon = responce.weather[0].icon;
 	$("#city-name").text(nameCity);
 	$("#country").text(nameCountry);
@@ -89,7 +94,9 @@ function appendData(responce) {
 	$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + "C");
 	$("#humidity").text(infoHumidity + String.fromCharCode(37));
 	$("#pressure").text(Math.floor(infoPresure * 0.750062));
+	$("#pressureUnits").text(pressureUnit);
 	$("#wind").text(infoWind);
+	$("#windUnits").text(windUnit);
 	$("#linkToMap").attr("href", "http://openweathermap.org/find?q=" + nameCity + "," + nameCountry);
 	console.log(typeIcon);
 	switch(typeIcon) {
@@ -152,11 +159,39 @@ $("#convertTemp").on("click", function () {
 	if(tempUnit === "C") {
 		console.log(infoTemp);
 		var infoTempF = Math.floor(infoTemp * 9 / 5 + 32);
-		$("#temp").text(infoTempF + String.fromCharCode(176) + "F");
 		tempUnit = "F";
+		$("#temp").text(infoTempF + String.fromCharCode(176) + tempUnit);
 		console.log(tempUnit);
 	} else {
-		$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + "C");
 		tempUnit = "C";
+		$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + tempUnit);
+	}
+});
+
+// Convert mm of mercury to hPa
+$("#convertPressure").on("click", function () {
+	console.log(infoPresure);
+	if(pressureUnit === "mm of mercury") {
+		$("#pressure").text(Math.floor(infoPresure));
+		pressureUnit = "hPa";
+		$("#pressureUnits").text(pressureUnit);
+		console.log(infoPresure);
+	} else {
+		$("#pressure").text(Math.floor(infoPresure * 0.750062));
+		pressureUnit = "mm of mercury";
+		$("#pressureUnits").text(pressureUnit);
+	}
+});
+
+// Convert m/s to km/h
+$("#convertWind").on("click", function () {
+	if(windUnit === "m/s") {
+		$("#wind").text(Math.floor(infoWind  * 3.6));
+		windUnit = "km/h";
+		$("#windUnits").text(windUnit);
+	} else {
+		$("#wind").text(Math.floor(infoWind));
+		windUnit = "m/s";
+		$("#windUnits").text(windUnit);
 	}
 });

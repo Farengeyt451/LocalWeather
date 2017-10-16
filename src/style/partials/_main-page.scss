@@ -16,8 +16,6 @@ body {
 	min-height: 100vh;
 }
 
-
-
 .city-name {
 	display: flex;
 	h1, span {
@@ -54,7 +52,7 @@ body {
 	border-radius: 50%;
 	span {
 		text-transform: capitalize;
-		color: #4F8F7D;
+		color: $weather-text-color;
 		font-size: 20px;
 		position: absolute;
 		left: 50%;
@@ -83,14 +81,11 @@ body {
 }
 
 .icon-temp {
-	// position: absolute;
 	border: 2px solid $accent-border;
 	height: 130px;
 	width: 130px;
 	padding: 20px;
 	margin: 20px;
-	// bottom: -10px;
-	// left: calc(50% - 300px);
 	border-radius: 50%;
 	background-color: rgba($white, 0.7);
 	&:hover, &:focus {
@@ -110,8 +105,13 @@ body {
 		font-size: 18px;
 	}
 	span {
-		color: #4F8F7D;
+		color: $weather-text-color;
 		font-size: 25px;
+	}
+	span:nth-child(3) {
+		font-size: 18px;
+		text-align: center;
+		margin-top: 10px;
 	}
 }
 
@@ -133,11 +133,6 @@ body {
 	left: 60% ;
 	.main-pressure {
 		@extend .main-temp;
-		span:nth-child(3) {
-			font-size: 18px;
-			text-align: center;
-			margin-top: 10px;
-		}
 	}
 }
 
@@ -147,11 +142,6 @@ body {
 	left: 20% ;
 	.main-wind {
 		@extend .main-temp;
-		span:nth-child(3) {
-			font-size: 18px;
-			text-align: center;
-			margin-top: 10px;
-		}
 	}
 }
 
@@ -175,25 +165,24 @@ body {
 .search-form {
 	.input-group {
 		background-color: transparent;
-		background-color: #73993D;
-		color: #FFF;
+		color: $white;
 		padding: 8px 20px;
 		border: none;
 		outline: none;
-		text-transform: uppercase;
+		text-transform: capitalize;
 	}
 	input[type = "text"] {
 		width: 300px;
 		outline: none;
-		background-color: rgba(255, 255, 255, 0.5);
-		border: 2px solid rgba(68, 136, 119, 0.5);
+		background-color: rgba($white, 0.5);
+		border: 2px solid rgba($accent-border, 0.5);
 		padding: 5px 10px;
 		transition: all 0.3s ease-in-out;
 		letter-spacing: 1px;
-		color: #464545;
+		color: $main-text-color;
 		margin-right: 5px;
 		&::placeholder {
-			color: #808080;
+			color: $placeholder-color;
 			font-size: 14px;
 		}
 		&:focus, &:hover {
@@ -202,13 +191,13 @@ body {
 	}
 	button[type = "submit"] {
 		outline: none;
-		border: 2px solid rgba(68, 136, 119, 0.5);
-		background-color: rgba(255, 255, 255, 0.5);
+		border: 2px solid rgba($accent-border, 0.5);
+		background-color: rgba($white, 0.5);
 		transition: all 0.3s ease-in-out;
 		text-transform: uppercase;
 		font-size: 14px;
 		letter-spacing: 1px;
-		color: #464545;
+		color: $main-text-color;
 		width: 100px;
 		position: relative;
 		display: inline-block;
@@ -223,9 +212,9 @@ body {
 
 @keyframes spin {
 	0% {
-		transform:rotate(360deg);
+		transform: rotate(360deg);
 	}
 	100% {
-		transform:rotate(0deg);
+		transform: rotate(0deg);
 	}
 }
