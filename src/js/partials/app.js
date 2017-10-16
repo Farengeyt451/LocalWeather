@@ -88,6 +88,8 @@ function appendData(responce) {
 	infoPresure = responce.main.pressure;
 	infoWind = responce.wind.speed;
 	var typeIcon = responce.weather[0].icon;
+	pressureUnit = "mm of mercury",
+	windUnit = "m/s";
 	$("#city-name").text(nameCity);
 	$("#country").text(nameCountry);
 	$("#desc").text(weatherDesc);
