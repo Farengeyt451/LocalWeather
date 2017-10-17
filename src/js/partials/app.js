@@ -19,11 +19,9 @@ function geoFindMe() {
 	function success(position) {
 		latitude = position.coords.latitude;
 		longitude = position.coords.longitude;
-		console.log(longitude + "  " + latitude);
 		getWeatherDataAuto(latitude, longitude);
 	}
 	function error() {
-		// alert("Unable to retrieve your location");
 		getWeatherDataAuto(51.509865, -0.118092);
 	}
 	navigator.geolocation.getCurrentPosition(success, error);
@@ -40,16 +38,12 @@ $("#searchCity").on("click", function () {
 function getWeatherDataAuto(latitude, longitude) {
 	var urlString = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=metric&lang=en&APPID=303c4b17f85d64176ffd592811fd1b91";
 	getData(urlString);
-	console.log(urlString);
-	// console.log("lat" + latitude + "&" + "lon" +longitude);
 }
 
 // Get weather data based on search
 function getWeatherData(city) {
 	var urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&lang=en&APPID=303c4b17f85d64176ffd592811fd1b91";
 	getData(urlString);
-	console.log(urlString);
-	// console.log("lat" + latitude + "&" + "lon" +longitude);
 }
 
 // Get weather AJAX
@@ -58,10 +52,6 @@ function getData(urlString) {
 			"url": urlString,
 			"type": "GET",
 			"success": function(responce) {
-				console.log(responce);
-				console.log(responce.name);
-				console.log("Rise " + transformDate(responce.sys.sunrise));
-				console.log("Set " + transformDate(responce.sys.sunset));
 				appendData(responce);
 			},
 			"error": function(error) {
@@ -71,23 +61,16 @@ function getData(urlString) {
 	});
 }
 
-// Convert Date from ms
-// TODO Don`t use library time.js
-function transformDate(responce) {
-	var timeSunriseSunstet = new Date(responce * 1000);
-	return timeSunriseSunstet.toString("HH:mm");
-}
-
 // Append data to html
 function appendData(responce) {
 	var nameCity = responce.name;
 	var nameCountry = responce.sys.country;
 	var weatherDesc = responce.weather[0].description;
-	infoTemp = responce.main.temp;
 	var infoHumidity = responce.main.humidity;
-	infoPresure = responce.main.pressure;
-	infoWind = responce.wind.speed;
 	var typeIcon = responce.weather[0].icon;
+	infoPresure = responce.main.pressure;
+	infoTemp = responce.main.temp;
+	infoWind = responce.wind.speed;
 	pressureUnit = "mm of mercury",
 	windUnit = "m/s";
 	$("#city-name").text(nameCity);
@@ -100,7 +83,6 @@ function appendData(responce) {
 	$("#wind").text(infoWind);
 	$("#windUnits").text(windUnit);
 	$("#linkToMap").attr("href", "http://openweathermap.org/find?q=" + nameCity + "," + nameCountry);
-	console.log(typeIcon);
 	switch(typeIcon) {
 		case "01d":
 			$("#icon-img").attr("src", "img/animated-icons/day.svg");
@@ -157,13 +139,10 @@ function appendData(responce) {
 
 // Convert Celsius to Fahrenheit and vice versa
 $("#convertTemp").on("click", function () {
-	console.log(infoTemp);
 	if(tempUnit === "C") {
-		console.log(infoTemp);
 		var infoTempF = Math.floor(infoTemp * 9 / 5 + 32);
 		tempUnit = "F";
 		$("#temp").text(infoTempF + String.fromCharCode(176) + tempUnit);
-		console.log(tempUnit);
 	} else {
 		tempUnit = "C";
 		$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + tempUnit);
@@ -172,12 +151,10 @@ $("#convertTemp").on("click", function () {
 
 // Convert mm of mercury to hPa
 $("#convertPressure").on("click", function () {
-	console.log(infoPresure);
 	if(pressureUnit === "mm of mercury") {
 		$("#pressure").text(Math.floor(infoPresure));
 		pressureUnit = "hPa";
 		$("#pressureUnits").text(pressureUnit);
-		console.log(infoPresure);
 	} else {
 		$("#pressure").text(Math.floor(infoPresure * 0.750062));
 		pressureUnit = "mm of mercury";
