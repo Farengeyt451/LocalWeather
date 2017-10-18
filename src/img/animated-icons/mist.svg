@@ -9,10 +9,12 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="Layer_1"
    data-name="Layer 1"
-   viewBox="0 0 100 100"
+   viewBox="0 0 64 64"
    version="1.1"
-   sodipodi:docname="632.svg"
-   inkscape:version="0.92.1 r15371">
+   sodipodi:docname="mist.svg"
+   inkscape:version="0.92.1 r15371"
+   width="64"
+   height="64">
   <metadata
      id="metadata49">
     <rdf:RDF>
@@ -21,6 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>mist</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,9 +40,9 @@
      inkscape:window-height="703"
      id="namedview47"
      showgrid="false"
-     inkscape:zoom="3.337544"
-     inkscape:cx="20.550749"
-     inkscape:cy="49.97675"
+     inkscape:zoom="6.675088"
+     inkscape:cx="10.189514"
+     inkscape:cy="27.376964"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -52,87 +55,83 @@
        id="clip-path">
       <path
          class="cls-1"
-         d="M205.71,0H134.29A14.33,14.33,0,0,0,120,14.29V85.71A14.33,14.33,0,0,0,134.29,100h71.43A14.33,14.33,0,0,0,220,85.71V14.29A14.33,14.33,0,0,0,205.71,0Z"
-         id="path4" />
+         d="M 205.71,0 H 134.29 A 14.33,14.33 0 0 0 120,14.29 V 85.71 A 14.33,14.33 0 0 0 134.29,100 h 71.43 A 14.33,14.33 0 0 0 220,85.71 V 14.29 A 14.33,14.33 0 0 0 205.71,0 Z"
+         id="path4"
+         inkscape:connector-curvature="0"
+         style="fill:none" />
     </clipPath>
     <clipPath
        id="clip-path-2">
       <path
          class="cls-1"
-         d="M325.71,0H254.29A14.33,14.33,0,0,0,240,14.29V85.71A14.33,14.33,0,0,0,254.29,100h71.43A14.33,14.33,0,0,0,340,85.71V14.29A14.33,14.33,0,0,0,325.71,0Z"
-         id="path7" />
+         d="M 325.71,0 H 254.29 A 14.33,14.33 0 0 0 240,14.29 V 85.71 A 14.33,14.33 0 0 0 254.29,100 h 71.43 A 14.33,14.33 0 0 0 340,85.71 V 14.29 A 14.33,14.33 0 0 0 325.71,0 Z"
+         id="path7"
+         inkscape:connector-curvature="0"
+         style="fill:none" />
     </clipPath>
   </defs>
   <title
      id="title12">mist</title>
+  <circle
+     style="fill:#ffffff;fill-opacity:0.51020408;stroke:none;stroke-width:0.87902391;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="path4497"
+     cx="32"
+     cy="32"
+     r="32" />
   <line
      class="cls-5"
-     x1="25.1"
-     y1="22.4"
-     x2="3.65"
-     y2="22.4"
-     id="line26" />
+     x1="34.105053"
+     y1="14.506243"
+     x2="20.431984"
+     y2="14.506243"
+     id="line26"
+     style="fill:none;stroke:#cff7fd;stroke-width:4.84044552px;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1" />
   <line
      class="cls-5"
-     x1="96.35"
-     y1="22.4"
-     x2="49.85"
-     y2="22.4"
-     id="line28" />
+     x1="19.757053"
+     y1="22.930147"
+     x2="9.6345177"
+     y2="22.930147"
+     id="line30"
+     style="fill:none;stroke:#cff7fd;stroke-width:4.84044552px;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1" />
   <line
      class="cls-5"
-     x1="23.98"
-     y1="40.8"
-     x2="8.1"
-     y2="40.8"
-     id="line30" />
+     x1="35.297314"
+     y1="30.089659"
+     x2="26.130936"
+     y2="30.089659"
+     id="line32"
+     style="fill:none;stroke:#cff7fd;stroke-width:4.84044552px;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1" />
   <line
      class="cls-5"
-     x1="59.23"
-     y1="40.8"
-     x2="44.85"
-     y2="40.8"
-     id="line32" />
+     x1="54.692837"
+     y1="22.506418"
+     x2="45.449966"
+     y2="22.506418"
+     id="line34"
+     style="fill:none;stroke:#cff7fd;stroke-width:4.84044552px;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1" />
   <line
      class="cls-5"
-     x1="85.6"
-     y1="40.8"
-     x2="71.1"
-     y2="40.8"
-     id="line34" />
+     x1="30.669132"
+     y1="45.08086"
+     x2="8.4671249"
+     y2="45.08086"
+     id="line36"
+     style="fill:none;stroke:#cff7fd;stroke-width:4.84044552px;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1" />
   <line
      class="cls-5"
-     x1="38.48"
-     y1="59.2"
-     x2="3.65"
-     y2="59.2"
-     id="line36" />
+     x1="54.797585"
+     y1="37.314575"
+     x2="32.888798"
+     y2="37.314575"
+     id="line38"
+     style="fill:none;stroke:#cff7fd;stroke-width:4.84044552px;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1" />
   <line
      class="cls-5"
-     x1="96.35"
-     y1="59.2"
-     x2="61.98"
-     y2="59.2"
-     id="line38" />
-  <line
-     class="cls-5"
-     x1="31.6"
-     y1="77.6"
-     x2="13.23"
-     y2="77.6"
-     id="line40" />
-  <line
-     class="cls-5"
-     x1="74.73"
-     y1="77.6"
-     x2="53.85"
-     y2="77.6"
-     id="line42" />
-  <line
-     class="cls-5"
-     x1="96.35"
-     y1="77.6"
-     x2="88.1"
-     y2="77.6"
-     id="line44" />
+     x1="46.114799"
+     y1="50.341858"
+     x2="40.855927"
+     y2="50.341858"
+     id="line44"
+     style="fill:none;stroke:#cff7fd;stroke-width:4.84044552px;stroke-linecap:round;stroke-miterlimit:10;stroke-opacity:1" />
 </svg>

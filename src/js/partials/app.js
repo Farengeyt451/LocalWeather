@@ -132,13 +132,11 @@ function appendData(responce) {
 		case "13n":
 			$("#icon-img").attr("src", "img/animated-icons/snowy-6.svg");
 			break;
-		default:
 		case "50d":
-			$("#icon-img").attr("src", "img/animated-icons/snowy-6.svg");
+			$("#icon-img").attr("src", "img/animated-icons/mist-d-n.svg");
 			break;
-		default:
 		case "50n":
-			$("#icon-img").attr("src", "img/animated-icons/snowy-6.svg");
+			$("#icon-img").attr("src", "img/animated-icons/mist-d-n.svg");
 			break;
 		default:
 			$("#icon-img").attr("src", "img/animated-icons/cloudy.svg");
