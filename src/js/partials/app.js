@@ -76,11 +76,11 @@ function appendData(responce) {
 	$("#city-name").text(nameCity);
 	$("#country").text(nameCountry);
 	$("#desc").text(weatherDesc);
-	$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + "C");
+	$("#temp").text(Math.round(infoTemp) + String.fromCharCode(176) + "C");
 	$("#humidity").text(infoHumidity + String.fromCharCode(37));
-	$("#pressure").text(Math.floor(infoPresure * 0.750062));
+	$("#pressure").text(Math.round(infoPresure * 0.750062));
 	$("#pressureUnits").text(pressureUnit);
-	$("#wind").text(infoWind);
+	$("#wind").text(Math.round(infoWind));
 	$("#windUnits").text(windUnit);
 	$("#linkToMap").attr("href", "http://openweathermap.org/find?q=" + nameCity + "," + nameCountry);
 	switch(typeIcon) {
@@ -146,23 +146,23 @@ function appendData(responce) {
 // Convert Celsius to Fahrenheit and vice versa
 $("#convertTemp").on("click", function () {
 	if(tempUnit === "C") {
-		var infoTempF = Math.floor(infoTemp * 9 / 5 + 32);
+		var infoTempF = Math.round(infoTemp * 9 / 5 + 32);
 		tempUnit = "F";
 		$("#temp").text(infoTempF + String.fromCharCode(176) + tempUnit);
 	} else {
 		tempUnit = "C";
-		$("#temp").text(Math.floor(infoTemp) + String.fromCharCode(176) + tempUnit);
+		$("#temp").text(Math.round(infoTemp) + String.fromCharCode(176) + tempUnit);
 	}
 });
 
 // Convert mm of mercury to hPa
 $("#convertPressure").on("click", function () {
 	if(pressureUnit === "mm of mercury") {
-		$("#pressure").text(Math.floor(infoPresure));
+		$("#pressure").text(Math.round(infoPresure));
 		pressureUnit = "hPa";
 		$("#pressureUnits").text(pressureUnit);
 	} else {
-		$("#pressure").text(Math.floor(infoPresure * 0.750062));
+		$("#pressure").text(Math.round(infoPresure * 0.750062));
 		pressureUnit = "mm of mercury";
 		$("#pressureUnits").text(pressureUnit);
 	}
@@ -171,11 +171,11 @@ $("#convertPressure").on("click", function () {
 // Convert m/s to km/h
 $("#convertWind").on("click", function () {
 	if(windUnit === "m/s") {
-		$("#wind").text(Math.floor(infoWind  * 3.6));
+		$("#wind").text(Math.round(infoWind  * 3.6));
 		windUnit = "km/h";
 		$("#windUnits").text(windUnit);
 	} else {
-		$("#wind").text(Math.floor(infoWind));
+		$("#wind").text(Math.round(infoWind));
 		windUnit = "m/s";
 		$("#windUnits").text(windUnit);
 	}
